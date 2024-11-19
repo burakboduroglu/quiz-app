@@ -96,12 +96,12 @@ const Quiz = ({ questions }: QuizProps) => {
           <>
             {/* Timer and Question Number */}
             <div className='flex lg:flex-row justify-between gap-3 mb-8 items-start'>
-              <div className='bg-gray-600 p-5 rounded-lg text-white font-semibold'>
+              <div className='bg-green-600 p-5 rounded-lg text-white font-semibold'>
                 <h2 className='text-sm lg:text-base'>
                   Question: {activeQuestion + 1}/{questions.length}
                 </h2>
               </div>
-              <div className='flex gap-2 bg-gray-600 p-5 rounded-lg text-white font-semibold'>
+              <div className='flex gap-2 bg-green-600 p-5 rounded-lg text-white font-semibold'>
                 <Timer size={20} />
                 <p>Time: {timeRemaining}</p>
               </div>
@@ -120,8 +120,8 @@ const Quiz = ({ questions }: QuizProps) => {
                   <li
                     key={idx}
                     onClick={() => onAnswerSelected(answer, idx)}
-                    className={`text-base mt-1 font-medium lg:text-lg cursor-pointer mb-1 py-2 rounded-md hover:bg-gray-500 hover:text-white px-3 ${
-                      selectedAnswerIndex === idx && 'bg-gray-500 text-white'
+                    className={`text-base mt-1 font-medium lg:text-lg cursor-pointer mb-1 py-2 rounded-md hover:bg-green-600 hover:text-white px-3 ${
+                      selectedAnswerIndex === idx && 'bg-green-600 text-white'
                     }`}
                   >
                     <span>{answer}</span>

@@ -9,8 +9,8 @@ export default async function QuizPage() {
   return (
     <div className='flex flex-col w-3/4 mx-auto font-mono'>
       <Header />
-      <main className='flex gap-5'>
-        <div className='flex mx-auto items-center justify-center border-2 m-3 bg-gray-300 rounded-lg w-full border-black'>
+      <main className='flex flex-col mb-3'>
+        <div className='flex mx-auto items-center justify-center border m-3 rounded-lg w-full border-green-500'>
           <Quiz questions={randomQuestions} />
         </div>
       </main>

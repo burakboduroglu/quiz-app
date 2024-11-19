@@ -13,7 +13,9 @@ export default function RootLayout({
 }>) {
   return (
     <html lang='tr'>
-      <body className='font-mono'>{children}</body>
+      <body className='font-mono bg-gradient-to-br from-green-50 via-white to-purple-50 h-full'>
+        {children}
+      </body>
     </html>
   );
 }
