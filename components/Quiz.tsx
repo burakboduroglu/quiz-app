@@ -90,18 +90,18 @@ const Quiz = ({ questions }: QuizProps) => {
   };
 
   return (
-    <div className='min-h-[500px] w-full font-mono'>
-      <div className='max-w-[1500px] mx-auto w-[90%] flex justify-center py-7 flex-col'>
+    <div className='h-full w-full font-mono'>
+      <div className='max-w-[1500px] mx-auto w-[90%] flex justify-center py-4 flex-col'>
         {!showResults ? (
           <>
             {/* Timer and Question Number */}
             <div className='flex lg:flex-row justify-between gap-3 mb-8 items-start'>
-              <div className='bg-green-600 p-5 rounded-lg text-white font-semibold'>
+              <div className='bg-green-500 p-5 rounded-lg text-white font-semibold'>
                 <h2 className='text-sm lg:text-base'>
                   Question: {activeQuestion + 1}/{questions.length}
                 </h2>
               </div>
-              <div className='flex gap-2 bg-green-600 p-5 rounded-lg text-white font-semibold'>
+              <div className='flex gap-2 bg-green-500 p-5 rounded-lg text-white font-semibold'>
                 <Timer size={20} />
                 <p>Time: {timeRemaining}</p>
               </div>
@@ -109,19 +109,19 @@ const Quiz = ({ questions }: QuizProps) => {
 
             {/* Question and Answers */}
             <div className='flex flex-col'>
-              <div className='w-full border-2 p-5 bg-white rounded-xl'>
-                <h3 className='text-lg lg:text-xl font-semibold underline pb-2'>Question:</h3>
-                <p className='text-lg lg:text-xl font-medium'>
+              <div className='w-full border-2 border-green-500 p-5 bg-white rounded-xl'>
+                <h3 className='text-lg lg:text-sm font-bold underline pb-2'>Question:</h3>
+                <p className='text-base lg:text-xl font-semibold'>
                   {questions[activeQuestion].question}
                 </p>
               </div>
-              <ul>
+              <ul className='pt-5'>
                 {questions[activeQuestion].answers.map((answer, idx) => (
                   <li
                     key={idx}
                     onClick={() => onAnswerSelected(answer, idx)}
-                    className={`text-base mt-1 font-medium lg:text-lg cursor-pointer mb-1 py-2 rounded-md hover:bg-green-600 hover:text-white px-3 ${
-                      selectedAnswerIndex === idx && 'bg-green-600 text-white'
+                    className={`text-base mt-1 font-light border border-sky-200 lg:text-lg cursor-pointer mb-1 py-2 rounded-md hover:bg-green-500 hover:text-white px-3 ${
+                      selectedAnswerIndex === idx && 'bg-green-500 text-white'
                     }`}
                   >
                     <span>{answer}</span>
@@ -142,7 +142,7 @@ const Quiz = ({ questions }: QuizProps) => {
             </div>
 
             {/* Warning */}
-            <div className='border border-black p-3 rounded-2xl mb-2 mt-3 text-sm'>
+            <div className='border border-gray-400 p-3 rounded-2xl mb-2 mt-8 text-[13.5px] pt-1'>
               <h4 className='font-semibold text-red-700'>Warning!</h4>
               <p>You cannot pass the questions before 10 seconds are up.</p>
               <p>You cannot pass without marking the questions</p>
