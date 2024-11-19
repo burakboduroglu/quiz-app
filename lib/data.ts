@@ -37,8 +37,4 @@ async function fetchQuestions() {
   return fetchedQuestions;
 }
 
-fetchQuestions().then((fetchedQuestions) => {
-  console.log(fetchedQuestions);
-});
-
 export default fetchQuestions;
